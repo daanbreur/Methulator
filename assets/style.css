@@ -1,0 +1,138 @@
+/* © Copyright 2022, Daan Breur */
+
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  margin:0;
+  background-color: #435165;
+}
+
+.login {
+  width: 400px;
+  background-color: #ffffff;
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+  margin: 100px auto;
+}
+.login h1 {
+  text-align: center;
+  color: #5b6574;
+  font-size: 24px;
+  padding: 20px 0 20px 0;
+  border-bottom: 1px solid #dee0e4;
+}
+.login form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 20px;
+}
+.login form label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #3274d6;
+  color: #ffffff;
+}
+.login form input[type="password"], .login form input[type="text"] {
+  width: 310px;
+  height: 50px;
+  border: 1px solid #dee0e4;
+  margin-bottom: 20px;
+  padding: 0 15px;
+}
+.login form input[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  margin-top: 20px;
+  background-color: #3274d6;
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+  color: #ffffff;
+  transition: background-color 0.2s;
+}
+.login form input[type="submit"]:hover {
+  background-color: #2868c7;
+  transition: background-color 0.2s;
+}
+.error {
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+#error-msg {
+  text-align: center;
+  margin: 0;
+  padding: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  color: #aa0000;
+}
+
+ul.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+li {
+  float: right;
+}
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+body.loggedin {
+	background-color: #f3f4f7;
+}
+.content {
+	width: 1000px;
+	margin: 0 auto;
+}
+.content h2 {
+	margin: 0;
+	padding: 25px 0;
+	font-size: 22px;
+	border-bottom: 1px solid #e0e0e3;
+	color: #4a536e;
+}
+.content > p, .content > div {
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+	margin: 25px 0;
+	padding: 25px;
+	background-color: #fff;
+}
+.content > p table td, .content > div table td {
+	padding: 5px;
+}
+.content > p table.highlighed td:first-child, .content > div table.highlighed td:first-child {
+	font-weight: bold;
+	color: #4a536e;
+	padding-right: 15px;
+}
+
+.content > div p {
+	padding: 5px;
+	margin: 0 0 10px 0;
+}
