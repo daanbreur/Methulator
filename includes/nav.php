@@ -3,7 +3,7 @@
     <li><a href="logout.php">Logout</a></li>
     <li><a href="profile.php"><?=$_SESSION['user']->username?> (PlayerID: <?=$_SESSION['user']->player->id?>)</a></li>
     <?php if ($_SESSION['user']->canViewAllPlayers()): ?>
-        <li><a href="customer.php">Players</a></li>
+        <li><a href="players.php">Players</a></li>
     <?php endif; ?>
     <?php if ($_SESSION['user']->canCreateMethTransaction()): ?>
         <li><a href="add.php">Nieuwe methTransaction</a></li>
