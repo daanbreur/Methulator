@@ -17,26 +17,26 @@ $title = 'Account Beheer';
 <div class="content">
     <?php if (isset($error)): ?>
         <div><p id='error-msg'><?= $error ?></p></div>
-    <?php elseif (isset($_GET['aid'])): ?>
+    <?php elseif (isset($_GET['id'])): ?>
     <?php else: ?>
         <h2>Accounts</h2>
         <div>
             <?php if ($_SESSION['user']->canViewAccounts()): ?>
                 <table class="highlighted">
-                    <tr><th>Id</th><th>Username</th><th>0--</th><th>--</th><th>--</th><th>Info Pagina</th></tr>
+                    <tr><th>Id</th><th>Username</th><th>Administrator</th><th>Permission Flags</th><th>Info Pagina</th></tr>
                     <?php
                     $connection = mysqli_connect(DB_FQDN, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
                     if ( mysqli_connect_errno() ) {
                         exit('Failed to connect to MySQL: ' . mysqli_connect_error());
                     }
-                    if ($stmt = $connection->prepare("SELECT c.* FROM customers c ORDER BY lastname ASC")) {
+                    if ($stmt = $connection->prepare("SELECT a.* FROM accounts a")) {
                         $stmt->execute();
                         $result = $stmt->get_result();
                         $stmt->free_result();
                         $stmt->close();
                         while($row = $result->fetch_assoc()) {
                             ?>
-                            <tr><td><?=$row['id']?></td><td><?=$row['-']?></td><td><?=$row['-']?></td><td><?=$row['-']?></td><td><?=$row['-']?></td><td><a href='accounts.php?id=<?=$row['id']?>'>link</a></td></tr>
+                            <tr><td><?=$row['id']?></td><td><?=$row['username']?></td><td><?=$row['isSuperAdmin']?'True':'False'?></td><td><?=$row['permissionFlags']?></td><td><a href='accounts.php?id=<?=$row['id']?>'>link</a></td></tr>
                             <?php
                         }
                     }
